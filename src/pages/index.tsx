@@ -16,6 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!session ? (
+        // @ts-ignore
         <button onClick={signIn}>Sign In</button>
       ) : (
         <Layout>
