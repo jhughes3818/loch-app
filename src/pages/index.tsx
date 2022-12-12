@@ -16,7 +16,22 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {!session ? (
-        <button onClick={() => signIn}>Sign In</button>
+        <div className="grid h-screen place-items-center">
+          <div className=" w-60 place-items-center rounded-md border border-gray-200 p-5 shadow-md">
+            <h1 className="text-center text-2xl font-bold">Welcome to Loch</h1>
+            <h1 className="text-md mt-4 text-center">
+              Please Sign In to Continue
+            </h1>
+            <div className="mt-6 grid place-items-center">
+              <button
+                className="inline-flex items-center rounded-md border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                onClick={() => signIn}
+              >
+                Sign In
+              </button>
+            </div>
+          </div>
+        </div>
       ) : (
         <Layout>
           <BlockMain />
