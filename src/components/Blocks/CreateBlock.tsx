@@ -34,7 +34,7 @@ export default function CreateBlock(props: any) {
   };
 
   return (
-    <div className="my-2 h-36 w-96 rounded-md border border-gray-200 bg-white p-3 p-5 shadow-md">
+    <div className="my-2 h-36 w-96 rounded-md border border-gray-200 bg-white p-5 shadow-md">
       <div className="flex justify-between">
         <input
           className="w-40 text-2xl font-bold focus:border focus:border-transparent focus:ring-0"

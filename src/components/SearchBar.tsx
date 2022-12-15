@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
+import Microlink from "@microlink/react";
 
 export default function SearchBar() {
   const [search, setSearch] = useState("");
@@ -47,10 +48,13 @@ export default function SearchBar() {
         </div>
       </form>
 
-      {search ? (
+      {search != "" ? (
         <div className=" border-gray block rounded-md border bg-white shadow-md">
           {results.map((result: any) => (
-            <div>{result.title}</div>
+            <div className="px-3 py-2">
+              <h1 className="text-xl font-bold">{result.title}</h1>
+              <Microlink url={result.content} size="small" media="logo" />
+            </div>
           ))}
         </div>
       ) : null}
