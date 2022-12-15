@@ -20,6 +20,7 @@ export default function CreateBlock(props: any) {
   const [body, setBody] = useState("");
 
   const saveNote = () => {
+    console.log(title);
     axios
       .post("/api/save-note", {
         title: title,
@@ -115,9 +116,11 @@ export default function CreateBlock(props: any) {
       <input
         onChange={(e) => setBody(e.target.value)}
         placeholder="Description"
-        onClick={() => saveNote()}
       ></input>
-      <button className="mt-2 block items-center rounded-md border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+      <button
+        onClick={() => saveNote()}
+        className="mt-2 block items-center rounded-md border border-transparent bg-indigo-100 px-4 py-2 text-sm font-medium text-indigo-700 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
         Save
       </button>
     </div>
