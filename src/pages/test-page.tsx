@@ -1,4 +1,5 @@
-import Microlink from "@microlink/react";
+//import Microlink from "@microlink/react";
+const Microlink = require("@microlink/react");
 import Layout from "../components/Layout";
 
 export default function Test() {

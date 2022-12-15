@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { RedBadge } from "../Tags";
 import CreateBlock from "./CreateBlock";
 import axios from "axios";
-import Microlink from "@microlink/react";
+//import Microlink from "@microlink/react";
+const Microlink = require("@microlink/react");
 
 const blocks = [
   {
