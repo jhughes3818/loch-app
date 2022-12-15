@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         </div>
       ) : (
         <Layout>
-          <BlockMain />
+          <BlockMain session={session} />
         </Layout>
       )}
     </>
