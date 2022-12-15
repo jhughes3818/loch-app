@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { RedBadge } from "../Tags";
 import CreateBlock from "./CreateBlock";
 import axios from "axios";
-//import Microlink from "@microlink/react";
-const Microlink = require("@microlink/react");
+import Microlink from "@microlink/react";
+// const Microlink = require("@microlink/react");
 
 const blocks = [
   {
@@ -34,7 +34,7 @@ const blocks = [
 ];
 
 export default function BlockMain(props: any) {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState<any>([]);
 
   useEffect(() => {
     if (props.session) {
@@ -46,26 +46,24 @@ export default function BlockMain(props: any) {
   }, [props.session]);
 
   return (
-    <>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="gap-2">
-          {blocks.map((block) => (
-            <div className="my-2 h-36 w-96 rounded-md border border-gray-200 bg-white p-5 shadow-md">
-              <div className="flex justify-between">
-                <h1 className="text-2xl font-bold">{block.title}</h1>
-                <RedBadge text={block.tag} />
-              </div>
-              <div className="py-2">
-                <Microlink url={block.body} size="small" media="logo" />
-              </div>
-              {/* <p>{block.body}</p> */}
+    <div className="grid grid-cols-2 gap-2">
+      <div className="gap-2">
+        {notes.map((block: any) => (
+          <div className="my-2 h-36 w-96 rounded-md border border-gray-200 bg-white p-5 shadow-md">
+            <div className="flex justify-between">
+              <h1 className="text-2xl font-bold">{block.title}</h1>
+              <RedBadge text={block.tag} />
             </div>
-          ))}
-        </div>
-        <div>
-          <CreateBlock session={props.session} />
-        </div>
+            <div className="py-2">
+              <Microlink url={block.content} size="small" media="logo" />
+            </div>
+            {/* <p>{block.body}</p> */}
+          </div>
+        ))}
       </div>
-    </>
+      <div>
+        <CreateBlock session={props.session} />
+      </div>
+    </div>
   );
 }
