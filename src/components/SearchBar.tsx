@@ -14,7 +14,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     console.log(search);
-    const { data: notes, error } = supabase
+    const resultsArray = supabase
       .from("Note")
       .select()
       .textSearch("title", search, {
